@@ -1,4 +1,4 @@
-cs231a_project
+Redundancy reduction in natural images
 ==============
 
-Redundancy reduction in natural images (computer vision final project)
+CS231a (Computer Vision) final project
