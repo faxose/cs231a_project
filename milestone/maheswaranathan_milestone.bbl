@@ -1,0 +1,24 @@
+\begin{thebibliography}{1}\itemsep=-1pt
+
+\bibitem{barlow}
+H.~Barlow.
+\newblock Redundancy reduction revisited.
+\newblock {\em Network: Comput. Neural Syst.}, 12:241--253, 2001.
+
+\bibitem{bethge}
+M.~Bethge.
+\newblock Factorial coding of natural images: how effective are linear models
+  in removing higher-order dependencies?
+\newblock {\em J. Opt. Soc. Am.}, 23(6), 2006.
+
+\bibitem{entropyest}
+J.~B. et~al.
+\newblock Nonparametric entropy estimation: An overview, 2001.
+
+\bibitem{vanhateren}
+J.~van Hateren and A.~van~der Schaaf.
+\newblock Independent component filters of natural images compared with simple
+  cells in primary visual cortex.
+\newblock {\em Proc.R.Soc.Lond. B}, 265:359--366, 1998.
+
+\end{thebibliography}

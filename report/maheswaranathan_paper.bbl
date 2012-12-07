@@ -1,0 +1,58 @@
+\begin{thebibliography}{10}\itemsep=-1pt
+
+\bibitem{barlow}
+H.~Barlow.
+\newblock Redundancy reduction revisited.
+\newblock {\em Network: Comput. Neural Syst.}, 12:241--253, 2001.
+
+\bibitem{ica}
+A.~J. Bell and T.~J. Sejnowski.
+\newblock An information maximisation approach to blind separation and blind
+  deconvolution.
+\newblock {\em Neural Computation}, 7(6):1129--1159, 1995.
+
+\bibitem{bethge}
+M.~Bethge.
+\newblock Factorial coding of natural images: how effective are linear models
+  in removing higher-order dependencies?
+\newblock {\em J. Opt. Soc. Am.}, 23(6), 2006.
+
+\bibitem{maxen}
+M.~Bethge and P.~Berens.
+\newblock Near-maximum entropy models for binary neural representations of
+  natural images.
+\newblock In {\em Advances in Neural Information Processing Systems}, 2008.
+
+\bibitem{chandlerfield}
+D.~M. Chandler and D.~J. Field.
+\newblock Estimates of the information content and dimensionality of natural
+  scenes from proximity distributions.
+\newblock {\em J. Opt. Soc. Am.}, 24(4), 2007.
+
+\bibitem{nicv1}
+J.~Eichhorn, F.~Sinz, and M.~Bethge.
+\newblock Natural image coding in v1: How much use is orientation selectivity?
+\newblock {\em PLoS Computational Biology}, 5(4), Apr 2009.
+
+\bibitem{entropyest}
+J.~B. et~al.
+\newblock Nonparametric entropy estimation: An overview, 2001.
+
+\bibitem{nis}
+A.~Hyv{\"a}rinen, J.~Hurri, and P.~O. Hoyer.
+\newblock {\em Natural Image Statistics}.
+\newblock Springer, 2009.
+
+\bibitem{petrov}
+Y.~Petrov and L.~Zhaoping.
+\newblock Local correlations, information redundancy, and sufficient pixel
+  depth in natural images.
+\newblock {\em JOURNAL OF THE OPTICAL SOCIETY OF AMERICA A}, 20:55--66, 2003.
+
+\bibitem{vanhateren}
+J.~van Hateren and A.~van~der Schaaf.
+\newblock Independent component filters of natural images compared with simple
+  cells in primary visual cortex.
+\newblock {\em Proc.R.Soc.Lond. B}, 265:359--366, 1998.
+
+\end{thebibliography}
