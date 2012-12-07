@@ -4,14 +4,19 @@
 % Sat Nov  3 18:57:19 2012
 
 addpath('mex/');
-N = round(logspace(1,5,20))';                   % size of neighbor set
+N = round(logspace(1,5,10))';                   % size of neighbor set
 num_images = 5;                                 % # of images to use to estimate pdf
+num_trials = 25;
 
 % Kernel Density estimate
-H_kde = zeros(length(N),1);
+H_kde = zeros(length(N),num_trials);
 
 % Nearest Neighbor estimate
-H_nn = zeros(length(N),1);
+H_nn = zeros(length(N),num_trials);
+
+% Theoretical entropy estimate
+%H_theory = log2(2*exp(1)*sqrt(0.5));
+H_theory = 0.5*log2(2*pi*exp(1));
 
 % get data
 %data = [];
@@ -23,29 +28,32 @@ H_nn = zeros(length(N),1);
 for i = 1:length(N)
 
     progressbar(i,length(N));
-    n = N(i);                                   % number of neighbors
 
-    %indices = randi(length(data),n,1);          % pick n random indices
-    %samples = col(data(indices));               % draw n samples from data
-    samples = laprnd(n,1);
+    for t = 1:num_trials
 
-    %distmex = build(n,[samples zeros(n,1)]);    % NN distances
-    %distmex = distmex + distmex' + 1e3*eye(n);  % fix distance matrix
-    %mindist = min(distmex);                     % get minimum distances
-    %mindist(mindist == 0) = [];                 % kill repeats
-    md = mindist(samples);
-    H_nn(i) = mean(log2(md)) + log2(2*n) - psi(1)/log(2);
+        n = N(i);                                   % number of neighbors
 
-    H_kde(i) = entropy(samples);                 % estimate entropy from PDF
+        %samples = laprnd(n,1);
+        samples = randn(n,1);
+
+        md = mindist(samples);
+        H_nn(i,t) = mean(log2(md)) + log2(2*n) - psi(1)/log(2);
+
+        H_kde(i,t) = entropy(samples);                 % estimate entropy from PDF
+
+    end
 
 end
 
 % Plots
-fig(1); clf;
-subplot(211); imgsc(img);
-subplot(212); plot(x,p,'k-'); makepretty;
-xlabel('x'); ylabel('p(x)');
+%fig(1); clf;
+%subplot(211); imgsc(img);
+%subplot(212); plot(x,p,'k-'); makepretty;
+%xlabel('x'); ylabel('p(x)');
 
-fig(2); clf;
-semilogx(N, H_nn, 'r*-', N, H_kde, 'c*-');
-legend('NN estimate', 'KD estimate');
+% Plots
+fig(1); clf;
+semilogx(N, mean(H_nn,2), 'r*-', N, mean(H_kde,2), 'c*-', [N(1) N(end)], [H_theory H_theory], 'k--');
+legend('NN estimate', 'KD estimate', 'True value');
+
+save('../data/1Dnorm.mat');

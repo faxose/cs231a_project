@@ -11,8 +11,8 @@ function H = entropy(samples)
 
     % Check to make sure PDF sums to 1
     dx = row(diff(x)); dx = [dx(1) dx];
-    if abs(sum(dx.*row(p)) - 1) >= 0.05
-        error('Probability distribution does not sum to 1.');
+    if abs(sum(dx.*row(p)) - 1) > 0.15
+        error('Probability distribution does not sum to 1, instead it sums to %4.3f', sum(dx.*row(p)));
     end
 
     % compute entropy
